@@ -1,12 +1,11 @@
 function total(numbers) {
-  var result = 0;
-  var parts = numbers.split(",");
-  for (var i = 0; i < parts.length; i++) {
-    var integer = parseInt(parts[i]);
-    if (checkIsInteger(integer) && checkIsIntergerInValidRange(integer)) {
-      result += integer;
-    }
-  }
+  const result = numbers
+    .split(",")
+    .map((part) => parseInt(part))
+    .filter((integer) => checkIsInteger(integer))
+    .filter((integer) => checkIsIntergerInValidRange(integer))
+    .reduce((acc, curr) => acc + curr, 0);
+
   return result;
 }
 
