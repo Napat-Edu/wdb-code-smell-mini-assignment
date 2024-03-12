@@ -15,7 +15,7 @@ describe("Total Test", () => {
     expect(total("")).toBe(0);
   });
 
-  it("should return ?", () => {
-    expect(total("1,3000")).toBe(0);
+  it("should return 1 when 1,3000", () => {
+    expect(total("1,3000")).toBe(1);
   });
 });
